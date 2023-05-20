@@ -2,7 +2,7 @@ from __future__ import annotations
 
 """ AVL Tree implemented on top of the standard BST. """
 
-__author__ = 'Alexey Ignatiev, with edits by Jackson Goerner'
+__author__ = 'Daniel Liu'
 __docformat__ = 'reStructuredText'
 
 from bst import BSTInOrderIterator, BinarySearchTree
@@ -253,13 +253,6 @@ class AVLTree(BinarySearchTree, Generic[K, I]):
                     self.get_height(current.right))
             current.height = height_new_root_node
 
-        """
-        
-        
-        WILL NEED TO CHANGE TO SIMILAR TO WHAT IS ABOVE!!! CAN'T UPDATE NODES IN LEFT SUBTREE USING GET_NUMBER_OF_NODES()
-        
-        
-        """
         # Updates number of nodes in left subtree of new root:
         temp_tree = AVLTree()
         temp_tree.root = current.left
